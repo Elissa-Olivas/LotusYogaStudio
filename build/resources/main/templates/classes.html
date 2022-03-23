@@ -10,6 +10,7 @@
 <div class="wrapper">
     <div class="sidebar">
         <h2>CLASSES</h2>
+        <img class="logo" th:src="'/images/' + 'lotuslogo3.png'" alt="Lotus Logo"/>
         <ul>
             <li><a th:href="@{/}"><i class="fas fa-home"></i>Home</a></li>
             <li><a th:href="@{/classes}"><i class="fas fa-user"></i>Classes</a></li>
@@ -19,7 +20,7 @@
         </ul>
     </div>
     <div class="main_content">
-        <div class="header">CLASSES FOR EACH WEEK</div>
+        <div class="header">ALL CLASSES</div>
         <div class="daily-info">
             <div class="row">
     <!--            <div  th:each="classes: ${classes}" class="col s12 l4">

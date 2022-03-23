@@ -1,16 +1,25 @@
 package com.detroitlabs.LotusYogaStudio.Controllers;
 
+import com.detroitlabs.LotusYogaStudio.Model.Classes;
+import com.detroitlabs.LotusYogaStudio.Model.Images;
 import com.detroitlabs.LotusYogaStudio.data.ClassesRepository;
+import com.detroitlabs.LotusYogaStudio.data.ImageRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 @Controller
 public class ClassController {
 
     @Autowired
     private ClassesRepository classesRepository;
+
+    @Autowired
+    private ImageRepository imageRepository;
 
 
     //HOME PAGE
@@ -22,7 +31,10 @@ public class ClassController {
     //CLASSES PAGE
     @RequestMapping("/classes")
     public String allClasses(ModelMap modelMap) {
-        modelMap.put("classes", classesRepository.getAllClasses());
+        List<Classes> classes = classesRepository.getAllClasses();
+        //Images classImages = imageRepository.setPic();
+        modelMap.put("classes", classes);
+        //modelMap.put("classimage", classImages);
         return "classes";
     }
 

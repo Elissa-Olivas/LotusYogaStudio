@@ -16,7 +16,9 @@
 //            assertEquals(results.getTimeOfClass().equals("09:00"));
 //        }
 //
-//
+//    @Test
+//    void listDayOfWeek() {
+//}
 //
 //    @Test
 //    void listClassByTime() {

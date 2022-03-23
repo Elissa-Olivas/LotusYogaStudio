@@ -51,4 +51,39 @@ public class ClassesRepository {
 
 
     //CREATE OTHER METHODS
+    //Method classByName - call class by the name
+    public List<Classes> listClassByName(String name) {
+        List<Classes> classByName = new ArrayList<>();
+        for(Classes className: ALL_CLASSES) {
+            if (className.getNameOfClass().equals(name)) {
+                classByName.add(className);
+            }
+        }
+        return classByName;
+    }
+
+    //        Method classByTime - call class by the time
+    public List<Classes> listClassByTime(String timeOfClass) {
+        List<Classes> classByTime = new ArrayList<>();
+        for(Classes classTime: ALL_CLASSES) {
+            if (classTime.getTimeOfClass().equals(timeOfClass)) {
+                classByTime.add(classTime);
+            }
+        }
+        return classByTime;
+    }
+    //method for class by Day?????
+
+
+    //        Method classByInstructor - call class by instructor that teaches it
+    public List<Instructors> listClassByInstructor(String name) {
+        List<Instructors> classByInstructor = new ArrayList<>();
+        for(Instructors classInstructors: ALL_INSTRUCTORS) {
+            if (classInstructors.getNameOfInstructor().equals(name)) {
+                classByInstructor.add(classInstructors);
+            }
+        }
+        return classByInstructor;
+    }
+
 }

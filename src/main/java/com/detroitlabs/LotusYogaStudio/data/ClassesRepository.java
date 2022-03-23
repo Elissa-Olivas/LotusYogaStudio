@@ -63,14 +63,13 @@ public class ClassesRepository {
     }
 
     //        Method classByTime - call class by the time
-    public List<Classes> listClassByTime(String timeOfClass) {
-        List<Classes> classByTime = new ArrayList<>();
+    public Classes listClassByTime(String timeOfClass) {
         for(Classes classTime: ALL_CLASSES) {
             if (classTime.getTimeOfClass().equals(timeOfClass)) {
-                classByTime.add(classTime);
+                return classTime;
             }
         }
-        return classByTime;
+        return null;
     }
     //method for class by Day?????
 

@@ -9,6 +9,7 @@ public class Classes {
     private String classPicID;           //pic of class
 
 
+    //Constructor
     public Classes(String nameOfClass, String classDescription, int heat, int humidity, String timeOfClass, String classPicID) {
         this.nameOfClass = nameOfClass;
         this.classDescription = classDescription;

@@ -33,7 +33,7 @@ public class ClassController {
     @RequestMapping("/classes") //not able to get images to work
     public String allClasses(ModelMap modelMap) {
         List<Classes> classes = classesRepository.getAllClasses();
-        //Images classImages = imageRepository.setPic();
+        //List<Images> images = imageRepository.getALL_Images();
         modelMap.put("classes", classes);
         //modelMap.put("classimage", classImages);
         return "classes";
@@ -43,18 +43,19 @@ public class ClassController {
     @RequestMapping("/classes/{nameOfClass}") //dosent work
     public String allClasses(@PathVariable String nameOfClass, ModelMap modelMap) {
         Classes classes = classesRepository.listClassByName(nameOfClass);
-//        Images images= imageRepository.setPic(classes.getPicID());
+//        List<Images> images= imageRepository.setPic(classes.getPicID());
         modelMap.put("classes", classes);
 //        modelMap.put("classimage", images);
         return "class-details";
     }
     //SCHEDULES PAGE
-    @RequestMapping("/schedule") // dosent work
+    @RequestMapping("/schedule") // images dosent work
     public String classSchedule(ModelMap modelMap) {
         List<Classes> schedule = classesRepository.getAllClasses();
-        List<Day> days = classesRepository.getAllDays();
+//        List<Day> days = classesRepository.getAllDays();
+        List<Images> images = imageRepository.getALL_Images();
         modelMap.put("schedule", schedule);
-        modelMap.put("day", days);
+        modelMap.put("image", images);
         return "schedule";
     }
 

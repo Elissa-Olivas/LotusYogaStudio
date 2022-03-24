@@ -32,7 +32,13 @@
             <div>Address: 123 Vinyasa cir. Colorado Springs, CO 80910</div>
             <img class="map" th:src="'/images/' + 'vinyasaMap.png'" alt="business map" style="width:500px;height:auto;"> <!--NEED TO UPDATE SIZE OF MAP -->
             <!-- NEED TO INCLUDE LINK TO AN EMAIL AND FACEBOOK -->
-
+            <div class="col s9">
+                <!-- trying to get the thymeleaf info to work-->
+                <h3 th:href="'/Company/' + ${nameOfCompany}" th:text="${nameOfCompany}"></h3>
+                <p th:href="'/Company/' + ${phnNum}" th:text="${phnNum}"></p>
+                <p th:href="'/Company/' + ${email}" th:text="${email}"></p>
+                <div>Email: <a href = "'/Company/' + mailto: ${email}"th:text="${email}">lotus_yoga@lotusyogastudio.com</a></div>
+            </div>
         </div>
     </div>
 </div>

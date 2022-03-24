@@ -21,10 +21,22 @@
     </div>
     <div class="main_content">
         <div class="header">CLASSES FOR THE WEEK</div>
-        <div class="info">
-            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
-            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
-            <div>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A sed nobis ut exercitationem atque accusamus sit natus officiis totam blanditiis at eum nemo, nulla et quae eius culpa eveniet voluptatibus repellat illum tenetur, facilis porro. Quae fuga odio perferendis itaque alias sint, beatae non maiores magnam ad, veniam tenetur atque ea exercitationem earum eveniet totam ipsam magni tempora aliquid ullam possimus? Tempora nobis facere porro, praesentium magnam provident accusamus temporibus! Repellendus harum veritatis itaque molestias repudiandae ea corporis maiores non obcaecati libero, unde ipsum consequuntur aut consectetur culpa magni omnis vero odio suscipit vitae dolor quod dignissimos perferendis eos? Consequuntur!</div>
+        <div class="daily-info">
+            <div class="row">
+                <p>Sunday:</p>
+                <p>Monday:</p>
+                <p>Tuesday:</p>
+                <p>Wednesday:</p>
+                <p>Thursday:</p>
+                <p>Friday:</p>
+                <p>Saturday:</p>
+            <div  th:each="currentClass: ${schedule} + ${day}" class="col s12 l4">
+                <!-- LIST DAY OF THE WEEK -->
+<!--                <a th:href="'/Day/' + ${currentClass.day}" th:text="${currentClass.day} + ': '"></a>-->
+                <!-- Get Class NAME and Time
+                <a th:href="'/Classes/' + ${currentClass.nameOfClass} + ${currentClass.timeOfClass}" th:text="'$' + ${currentClass.nameOfClass} + ': ' + ${currentClass.timeOfClass}"></a> -->
+            </div>
+            </div>
         </div>
     </div>
 </div>

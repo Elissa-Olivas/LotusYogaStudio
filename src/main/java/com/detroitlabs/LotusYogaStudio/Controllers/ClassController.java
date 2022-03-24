@@ -1,6 +1,7 @@
 package com.detroitlabs.LotusYogaStudio.Controllers;
 
 import com.detroitlabs.LotusYogaStudio.Model.Classes;
+import com.detroitlabs.LotusYogaStudio.Model.Day;
 import com.detroitlabs.LotusYogaStudio.Model.Images;
 import com.detroitlabs.LotusYogaStudio.data.ClassesRepository;
 import com.detroitlabs.LotusYogaStudio.data.ImageRepository;
@@ -29,7 +30,7 @@ public class ClassController {
     }
 
     //CLASSES PAGE
-    @RequestMapping("/classes")
+    @RequestMapping("/classes") //not able to get images to work
     public String allClasses(ModelMap modelMap) {
         List<Classes> classes = classesRepository.getAllClasses();
         //Images classImages = imageRepository.setPic();
@@ -38,18 +39,30 @@ public class ClassController {
         return "classes";
     }
 
-
+    //CLASS DETAILS PAGE
+    @RequestMapping("/classes/{nameOfClass}") //dosent work
+    public String allClasses(@PathVariable String nameOfClass, ModelMap modelMap) {
+        Classes classes = classesRepository.listClassByName(nameOfClass);
+//        Images images= imageRepository.setPic(classes.getPicID());
+        modelMap.put("classes", classes);
+//        modelMap.put("classimage", images);
+        return "class-details";
+    }
     //SCHEDULES PAGE
-    @RequestMapping("/schedule")
+    @RequestMapping("/schedule") // dosent work
     public String classSchedule(ModelMap modelMap) {
-        modelMap.put("schedule", classesRepository.getAllClasses());  //not sure if this is right?
+        List<Classes> schedule = classesRepository.getAllClasses();
+        List<Day> days = classesRepository.getAllDays();
+        modelMap.put("schedule", schedule);
+        modelMap.put("day", days);
         return "schedule";
     }
 
     //INSTRUCTORS PAGE
-    @RequestMapping("/instructors")
+    @RequestMapping("/instructors") //cant get photos to appear
     public String allInstructors(ModelMap modelMap) {
         modelMap.put("instructors", classesRepository.getAllInstructors());
+//        modelMap.put("images", imageRepository.setPic();
         return "instructors";
     }
 

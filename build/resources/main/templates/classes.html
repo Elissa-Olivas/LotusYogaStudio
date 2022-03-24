@@ -23,15 +23,12 @@
         <div class="header">ALL CLASSES</div>
         <div class="daily-info">
             <div class="row">
-    <!--            <div  th:each="classes: ${classes}" class="col s12 l4">
-                    List Day of Week
-                    <a th:href="'/day/' + ${classes.dayOfWeek}" th:text="${classes.dayOfWeek} + ': '"></a>
-                    Get Class NAME and Class Description
-                    <a th:href="'/classes/' + ${classes.nameOfClass} + ${classes.classDescription}" th:text="'$' + ${classes.nameOfClass} + ': ' + ${classes.classDescription}"></a>
-                   Get an Image for the class
-                    <img th:src="@{'/images/' + ${classes.name} + '.jpeg'}" alt="yoga picture" />
-                    </a>
-                </div>  -->
+                <div  th:each="listOfClasses: ${classes}" class="col s12 l4">
+                    <!-- Get Class NAME and Class Description -->
+                    <a th:href="'/Classes/' + ${listOfClasses.nameOfClass}" th:text="${listOfClasses.nameOfClass}"></a>
+                   <!-- Get an Image for the class
+                    <img th:src="@{'/images/' + ${classes.name} + '.jpeg'}" alt="yoga picture" > -->
+                </div>
             </div>
         </div>
     </div>

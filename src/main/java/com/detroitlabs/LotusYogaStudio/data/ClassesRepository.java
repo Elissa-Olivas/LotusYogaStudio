@@ -15,15 +15,9 @@ public class ClassesRepository {
 
     //NEED TO ADD PIC ID FOR CONSTRUCTORS
     private static final List<Classes> ALL_CLASSES = Arrays.asList(
-            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "08:00 am", "beginner"),
-            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "02:45 pm", "beginner"),
-            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "03:00 pm", "beginner"),
-            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "09:00 am", "medium"),
-            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "07:15 am", "medium"),
-            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "03:45 pm", "medium"),
-            new Classes("Hot Yoga 1", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "Medium", "Low", "06:00 am", "advanced"),
-            new Classes("Hot Yoga 1", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "Medium", "Low", "08:30 am", "advanced"),
-            new Classes("Hot Yoga 1", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "Medium", "Low", "06:00 pm", "advanced"));
+            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "beginner"),
+            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "medium"),
+            new Classes("Hot Yoga 2", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "Medium", "Low", "advanced"));
 
 
     public static List<Classes> getAllClasses() {
@@ -77,19 +71,19 @@ public class ClassesRepository {
         return null;
     }
 
-    //        Method classByTime - call class by the time
-    public Classes listClassByTime(String timeOfClass) {
-        for(Classes classTime: ALL_CLASSES) {
-            if (classTime.getTimeOfClass().equals(timeOfClass)) {
-                return classTime;
-            }
-        }
-        return null;
-    }
+//    //        Method classByTime - call class by the time
+//    public Classes listClassByTime(String timeOfClass) {
+//        for(Classes classTime: ALL_CLASSES) {
+//            if (classTime.getTimeOfClass().equals(timeOfClass)) {
+//                return classTime;
+//            }
+//        }
+//        return null;
+//    }
 
 
     //        Method classByInstructor - call class by instructor that teaches it
-    public List<Instructors> listClassByInstructor(String name) {
+    public List<Instructors> listInstructor(String name) {
         List<Instructors> classByInstructor = new ArrayList<>();
         for(Instructors classInstructors: ALL_INSTRUCTORS) {
             if (classInstructors.getNameOfInstructor().equals(name)) {
@@ -108,6 +102,15 @@ public class ClassesRepository {
             }
         }
         return listOfDays;
+    }
+
+    public Classes returnPicID(String picID) {
+        for(Classes classPic: ALL_CLASSES) {
+            if (classPic.getPicID().equals(picID)) {
+                return classPic;
+            }
+        }
+        return null;
     }
 
 }

@@ -5,17 +5,17 @@ public class Classes {
     private String classDescription;     //description of class
     private String heatIntensity;            //heat instensity of class
     private String humidity;                //humidity of class
-    private String timeOfClass;          //time of class
+//    private String timeOfClass;          //time of class
     private String picID;;           //pic of class
 
 
     //Constructor
-    public Classes(String nameOfClass, String classDescription, String heatIntensity, String humidity, String timeOfClass, String picID) {
+    public Classes(String nameOfClass, String classDescription, String heatIntensity, String humidity, String picID) {
         this.nameOfClass = nameOfClass;
         this.classDescription = classDescription;
         this.heatIntensity = heatIntensity;
         this.humidity = humidity;
-        this.timeOfClass = timeOfClass;
+//        this.timeOfClass = timeOfClass;
         this.picID = picID;
     }
 
@@ -52,13 +52,13 @@ public class Classes {
         this.humidity = humidity;
     }
 
-    public String getTimeOfClass() {
-        return timeOfClass;
-    }
-
-    public void setTimeOfClass(String timeOfClass) {
-        this.timeOfClass = timeOfClass;
-    }
+//    public String getTimeOfClass() {
+//        return timeOfClass;
+//    }
+//
+//    public void setTimeOfClass(String timeOfClass) {
+//        this.timeOfClass = timeOfClass;
+//    }
 
     public String getPicID() {
         return picID;

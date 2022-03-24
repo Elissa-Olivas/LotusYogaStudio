@@ -5,7 +5,6 @@ public class Classes {
     private String classDescription;     //description of class
     private String heatIntensity;            //heat instensity of class
     private String humidity;                //humidity of class
-//    private String timeOfClass;          //time of class
     private String picID;;           //pic of class
 
 
@@ -15,7 +14,6 @@ public class Classes {
         this.classDescription = classDescription;
         this.heatIntensity = heatIntensity;
         this.humidity = humidity;
-//        this.timeOfClass = timeOfClass;
         this.picID = picID;
     }
 

@@ -20,25 +20,15 @@
         </ul>
     </div>
     <div class="main_content">
-        <div class="header">Lotus Yoga Studio</div>
+        <div class="header">The yoga pose is not the goal. Becoming flexible or standing on your hands is not the goal. The goal is to create space where you were once stuck. To unveil layers of protection you've built around your heart. To appreciate your body and becomeaware of the mind and the noise it creates. To make peace with who you are. The goal is to love,...well, you! Shift your focus and your heart will grow - Rachel Brathen</div>
         <div class="info">
-            <div>Please Contact Us @ </div>
             <div class="companyinfo">
-                <!-- ADD COMPANY INFO HERE -->
-
-            </div>
-            <div>Phone Number: #719-123-4567</div>
-            <div>Email: <a href = "mailto: lotus_yoga@lotusyogastudio.com">lotus_yoga@lotusyogastudio.com</a></div>
-            <div>Address: 123 Vinyasa cir. Colorado Springs, CO 80910</div>
+            <h1 th:href="'/Company/' + ${contact.nameOfCompany}" th:text="${contact.nameOfCompany}"></h1>
+                <br>
+            <p th:href="'/Company/' + ${contact.phnNum}" th:text="${contact.phnNum}"></p>
+                <div>Email: <a href = "mailto: lotus_yoga@lotusyogastudio.com">lotus_yoga@lotusyogastudio.com</a></div>
+            <p th:href="'/Company/' + ${contact.address}" th:text="${contact.address}"></p>
             <img class="map" th:src="'/images/' + 'vinyasaMap.png'" alt="business map" style="width:500px;height:auto;"> <!--NEED TO UPDATE SIZE OF MAP -->
-            <!-- NEED TO INCLUDE LINK TO AN EMAIL AND FACEBOOK -->
-            <div class="col s9">
-                <!-- trying to get the thymeleaf info to work-->
-                <h3 th:href="'/Company/' + ${nameOfCompany}" th:text="${nameOfCompany}"></h3>
-                <p th:href="'/Company/' + ${phnNum}" th:text="${phnNum}"></p>
-                <p th:href="'/Company/' + ${email}" th:text="${email}"></p>
-                <div>Email: <a href = "'/Company/' + mailto: ${email}"th:text="${email}">lotus_yoga@lotusyogastudio.com</a></div>
-            </div>
         </div>
     </div>
 </div>

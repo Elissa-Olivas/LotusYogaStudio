@@ -87,6 +87,9 @@ body{
     color: #4D4A52;
     line-height: 25px;
 }
+.wrapper .main_content .info .welcome h1 {
+    color: #F54085;
+}
 
 .wrapper .main_content .info div{
     margin-bottom: 20px;
@@ -104,4 +107,18 @@ body{
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+.wrapper .main_content .info .instructors {
+    color: #403956;
+    text-align: center;
+}
+.wrapper .main_content .daily-info .row {
+    margin-left: 5%;
+}
+.wrapper .main_content .daily-info .row h2 {
+    color: #F54085;
+}
+.wrapper .main_content .daily-info .row h1 {
+    color: #403956;
+    text-align: center;
 }

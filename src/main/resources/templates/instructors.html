@@ -20,12 +20,14 @@
         </ul>
     </div>
     <div class="main_content">
-        <div class="header">GET TO KNOW OUR INSTRUCTORS</div>
+        <div class="header">The yoga pose is not the goal. Becoming flexible or standing on your hands is not the goal. The goal is to create space where you were once stuck. To unveil layers of protection you've built around your heart. To appreciate your body and becomeaware of the mind and the noise it creates. To make peace with who you are. The goal is to love,...well, you! Shift your focus and your heart will grow - Rachel Brathen</div>
         <div class="info">
+            <h1 class="instructors">GET TO KNOW OUR INSTRUCTORS</h1>
+            <br>
             <div th:each="currentInstructor: ${instructors}" class="col s12 l4">
                 <div>
                     <!-- teacher image -->
-                    <img th:src="@{'/images/' + ${currentInstructor.instructorPicID} + '.jpg'}" alt="teacher photo" />
+                    <img th:src="@{'/images/' + ${currentInstructor.instructorPicID} + '.jpeg'}" alt="teacher photo" />
                     <!-- <a th:href="'/images/' + ${currentInstructor.instructorPicID}"></a> -->
                 </div>
                 <div class="col s9">

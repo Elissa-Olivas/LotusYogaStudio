@@ -2,7 +2,6 @@ package com.detroitlabs.LotusYogaStudio.data;
 
 import com.detroitlabs.LotusYogaStudio.Model.Classes;
 import com.detroitlabs.LotusYogaStudio.Model.Company;
-import com.detroitlabs.LotusYogaStudio.Model.Day;
 import com.detroitlabs.LotusYogaStudio.Model.Instructors;
 import org.springframework.stereotype.Component;
 
@@ -15,9 +14,9 @@ public class ClassesRepository {
 
     //NEED TO ADD PIC ID FOR CONSTRUCTORS
     private static final List<Classes> ALL_CLASSES = Arrays.asList(
-            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "beginner"),
-            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "medium"),
-            new Classes("Hot Yoga 2", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "Medium", "Low", "advanced"));
+            new Classes("Beginner Yoga", "Unroll your mat for an invigorating full body flow. Explore the fundamental principles and postures of Vinyasa yoga. Enjoy a set series yoga class to work every muscle, linking breath to movement at a moderate intuitive pace.", "Low", "None", "beginneryoga"),
+            new Classes("Hot Yoga 1", "Turn stress into sweat. This signature class strengthens, balances and detoxifies your entire body and mind as you move through more challenging postures and connected breath. Set to an energizing playlist, you’ll power up your practice like never before.", "Medium", "Low", "mediumyoga"),
+            new Classes("Hot Yoga 2", "When muscle meets yoga, Yoga Sculpt is born. Boost metabolism and build lean muscle mass as you move to upbeat tracks. You’ll combine free weights with CorePower Yoga 2 sequencing and cardio to intensify each yoga pose while mixing in strength-training moves like squats, lunges and bicep curls.", "High", "medium", "advancedyoga"));
 
 
     public static List<Classes> getAllClasses() {
@@ -25,11 +24,11 @@ public class ClassesRepository {
     }
 
 
-    //LIST OF INSTRUCTORS - NEED PIC ID
+    //LIST OF INSTRUCTORS
     private static final List<Instructors> ALL_INSTRUCTORS = Arrays.asList(
-            new Instructors("Ellie May", "# of years practicing yoga: 21. # of years teaching yoga: 17. Favorite style(s) of yoga to practice/teach: vinyasa flow and one on one yoga therapy", "teacher1"),
-            new Instructors("John", "# of years practicing yoga: 13. # of years teaching yoga: 9. Favorite style(s) of yoga to practice/teach: ashtanga & vinyasa", "teacher3"),
-            new Instructors("Leilani Marie", "# of years practicing yoga: 12. # of years teaching yoga: 3. Favorite style(s) of yoga to practice/teach: Practice: Vinyasa Flow, Hatha, Yin Yoga and Restorative Yoga", "teacher2"));
+            new Instructors("Karina Mirsky", "# of years practicing yoga: 21. # of years teaching yoga: 17. Favorite style(s) of yoga to practice/teach: vinyasa flow and one on one yoga therapy", "femaleyogateacher1"),
+            new Instructors("Simon Park", "# of years practicing yoga: 13. # of years teaching yoga: 9. Favorite style(s) of yoga to practice/teach: ashtanga & vinyasa", "maleyogateacher"),
+            new Instructors("Leilani Marie", "# of years practicing yoga: 12. # of years teaching yoga: 3. Favorite style(s) of yoga to practice/teach: Practice: Vinyasa Flow, Hatha, Yin Yoga and Restorative Yoga", "femaleyogateacher2"));
 
 
     public static List<Instructors> getAllInstructors() {
@@ -37,7 +36,7 @@ public class ClassesRepository {
     }
 
     //COMPANY INFO
-    private Company companyInfo = new Company("Lotus Yoga", "719-123-4567", "123 Vinyasa circ, Colorado Springs, CO 80910", "lotus_Yoga@lotusyogastudio.com");
+    private Company companyInfo = new Company("Lotus Yoga Studio", "719-123-4567", "123 Vinyasa cir., Colorado Springs, CO 80910", "lotus_Yoga@lotusyogastudio.com");
 
 
     public Company getCompanyInfo() {
@@ -45,72 +44,35 @@ public class ClassesRepository {
     }
 
 
-    //Day of the week
-    private static final List<Day> ALL_DAYS = Arrays.asList(
-            new Day("Sunday"),
-            new Day("Monday"),
-            new Day("Tuesday"),
-            new Day("Wednesday"),
-            new Day("Thursday"),
-            new Day("Friday"),
-            new Day("Saturday"));
 
 
-    public static List<Day> getAllDays() {
-        return ALL_DAYS;
-    }
-
-    //CREATE OTHER METHODS
-    //Method classByName - call class by the name
-    public Classes listClassByName(String name) {
-        for(Classes className: ALL_CLASSES) {
-            if (className.getNameOfClass().equals(name)) {
-                return className;
-            }
-        }
-        return null;
-    }
-
-//    //        Method classByTime - call class by the time
-//    public Classes listClassByTime(String timeOfClass) {
-//        for(Classes classTime: ALL_CLASSES) {
-//            if (classTime.getTimeOfClass().equals(timeOfClass)) {
-//                return classTime;
+//    public Classes returnPicID(String picID) {
+//        for(Classes classPic: ALL_CLASSES) {
+//            if (classPic.getPicID().equals(picID)) {
+//                return classPic;
 //            }
 //        }
 //        return null;
 //    }
-
-
-    //        Method classByInstructor - call class by instructor that teaches it
-    public List<Instructors> listInstructor(String name) {
-        List<Instructors> classByInstructor = new ArrayList<>();
-        for(Instructors classInstructors: ALL_INSTRUCTORS) {
-            if (classInstructors.getNameOfInstructor().equals(name)) {
-                classByInstructor.add(classInstructors);
+    public List<Classes> returnPicID(String picID) {
+        List<Classes> picIDSearch = new ArrayList<>();
+        for (Classes classes : ALL_CLASSES) {
+            if (classes.getPicID().equals(picID)) {
+                picIDSearch.add(classes);
             }
         }
-        return classByInstructor;
+        return picIDSearch;
     }
 
-    //method to listDayOfWeek
-    public List<Day> listDayOfWeek(String day) {
-        List<Day> listOfDays = new ArrayList<>();
-        for(Day currentDay: ALL_DAYS) {
-            if (currentDay.getDayOfWeek().equals(day)) {
-                listOfDays.add(currentDay);
-            }
-        }
-        return listOfDays;
-    }
 
-    public Classes returnPicID(String picID) {
-        for(Classes classPic: ALL_CLASSES) {
-            if (classPic.getPicID().equals(picID)) {
-                return classPic;
+    public List<Classes> searchByName(String nameOfClass) {
+        List<Classes> nameOfClassSearch = new ArrayList<>();
+        for (Classes classes : ALL_CLASSES) {
+            if (classes.getNameOfClass().equals(nameOfClass)) {
+                nameOfClassSearch.add(classes);
             }
         }
-        return null;
+        return nameOfClassSearch;
     }
 
 }

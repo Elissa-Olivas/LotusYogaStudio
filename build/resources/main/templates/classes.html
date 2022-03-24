@@ -20,14 +20,25 @@
         </ul>
     </div>
     <div class="main_content">
-        <div class="header">ALL CLASSES</div>
+        <div class="header">The yoga pose is not the goal. Becoming flexible or standing on your hands is not the goal. The goal is to create space where you were once stuck. To unveil layers of protection you've built around your heart. To appreciate your body and becomeaware of the mind and the noise it creates. To make peace with who you are. The goal is to love,...well, you! Shift your focus and your heart will grow - Rachel Brathen</div>
         <div class="daily-info">
             <div class="row">
+                <br>
+                <h2>ALL CLASSES</h2>
                 <div  th:each="listOfClasses: ${classes}" class="col s12 l4">
+                    <!-- Get an Image for the class -->
+                    <br>
+                    <img th:src="@{'/images/' + ${listOfClasses.picID} + '.jpeg'}" alt="yoga picture" >
                     <!-- Get Class NAME and Class Description -->
-                    <a th:href="'/Classes/' + ${listOfClasses.nameOfClass}" th:text="${listOfClasses.nameOfClass}"></a>
-                   <!-- Get an Image for the class
-                    <img th:src="@{'/images/' + ${classes.name} + '.jpeg'}" alt="yoga picture" > -->
+                    <br>
+                    <h3 th:href="'/Classes/' + ${listOfClasses.nameOfClass}" th:text="${listOfClasses.nameOfClass}"></h3>
+                    <br>
+                    <p th:href="'/Classes/' + ${listOfClasses.classDescription}" th:text="${listOfClasses.classDescription}"></p>
+                    <br>
+                    <p th:href="'/Classes/' + ${listOfClasses.heatIntensity}" th:text="'Heat: ' + ${listOfClasses.heatIntensity}"></p>
+                    <p th:href="'/Classes/' + ${listOfClasses.humidity}" th:text="'Humidity: ' + ${listOfClasses.humidity}"></p>
+                    <br>
+                    <hr>
                 </div>
             </div>
         </div>

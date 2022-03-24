@@ -28,7 +28,7 @@ public class ClassController {
     }
 
     //CLASSES PAGE
-    @RequestMapping("/classes") //not able to get images to work
+    @RequestMapping("/classes")
     public String allClasses(ModelMap modelMap) {
         List<Classes> classes = classesRepository.getAllClasses();
         modelMap.put("classes", classes);
@@ -37,7 +37,7 @@ public class ClassController {
 
 
     //SCHEDULES PAGE
-    @RequestMapping("/schedule") // images dosent work
+    @RequestMapping("/schedule")
     public String classSchedule(ModelMap modelMap) {
         List<Classes> schedule = classesRepository.getAllClasses();
         List<Images> images = imageRepository.getALL_Images();
@@ -47,7 +47,7 @@ public class ClassController {
     }
 
     //INSTRUCTORS PAGE
-    @RequestMapping("/instructors") //cant get photos to appear
+    @RequestMapping("/instructors")
     public String allInstructors(ModelMap modelMap) {
         modelMap.put("instructors", classesRepository.getAllInstructors());
         return "instructors";

@@ -26,7 +26,7 @@ public class ClassesRepository {
 
     //LIST OF INSTRUCTORS
     private static final List<Instructors> ALL_INSTRUCTORS = Arrays.asList(
-            new Instructors("Karina Mirsky", "# of years practicing yoga: 21. # of years teaching yoga: 17. Favorite style(s) of yoga to practice/teach: vinyasa flow and one on one yoga therapy", "femaleyogateacher1"),
+            new Instructors("Karina Mirski", "# of years practicing yoga: 21. # of years teaching yoga: 17. Favorite style(s) of yoga to practice/teach: vinyasa flow and one on one yoga therapy", "femaleyogateacher1"),
             new Instructors("Simon Park", "# of years practicing yoga: 13. # of years teaching yoga: 9. Favorite style(s) of yoga to practice/teach: ashtanga & vinyasa", "maleyogateacher"),
             new Instructors("Leilani Marie", "# of years practicing yoga: 12. # of years teaching yoga: 3. Favorite style(s) of yoga to practice/teach: Practice: Vinyasa Flow, Hatha, Yin Yoga and Restorative Yoga", "femaleyogateacher2"));
 
@@ -44,16 +44,7 @@ public class ClassesRepository {
     }
 
 
-
-
-//    public Classes returnPicID(String picID) {
-//        for(Classes classPic: ALL_CLASSES) {
-//            if (classPic.getPicID().equals(picID)) {
-//                return classPic;
-//            }
-//        }
-//        return null;
-//    }
+    //test methods
     public List<Classes> returnPicID(String picID) {
         List<Classes> picIDSearch = new ArrayList<>();
         for (Classes classes : ALL_CLASSES) {

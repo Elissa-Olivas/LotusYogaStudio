@@ -24,7 +24,7 @@ public class ClassController {
     //HOME PAGE
     @RequestMapping("/")
     public String displayHome() {
-        return "home";
+        return "index";
     }
 
     //CLASSES PAGE

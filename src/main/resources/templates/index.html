@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en"  xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="stylesheet" th:href="@{./css.css}" />
+    <link rel="stylesheet" th:href="@{https://elissa-olivas.github.io/LotusYogaStudio/src/main/resources/static/css.css}" />
 </head>
 </body>
 <div class="wrapper">
     <div class="sidebar">
         <h2>HOME</h2>
-        <img class="logo" th:src="'/images/' + 'lotuslogo3.png'" alt="Lotus Logo"/>
+        <img class="logo" th:src="@{'/images/' + 'lotuslogo3.png'}" alt="Lotus Logo"/>
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/classes">Classes</a></li>
+            <li><a th:href="@{/}">Home</a></li>
+            <li><a th:href="@{/classes}">Classes</a></li>
             <li><a th:href="@{/schedule}">Schedule</a></li>
             <li><a th:href="@{/instructors}">Instructors</a></li>
             <li><a th:href="@{/contact}">Contact</a></li>
